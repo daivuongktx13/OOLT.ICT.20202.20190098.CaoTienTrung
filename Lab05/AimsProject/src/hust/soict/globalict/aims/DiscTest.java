@@ -11,7 +11,7 @@ public class DiscTest {
 		DigitalVideoDisc dvd4=new DigitalVideoDisc("Harry Potter", "Adventure", 20.42f);
 		
 		//DigitalVideoDisc dvd[]= {dvd1,dvd2,dvd3};
-		anOrder.addDigitalVideoDisc(dvd3,dvd2,dvd1,dvd4);
+		anOrder.addDigitalVideoDisc(dvd2,dvd3,dvd4,dvd1);
 		System.out.println("Result for search word \"King Lion\" in DVD1: "+dvd1.search("King Lion"));
 		System.out.println("Result for search word \"King Liom\" in DVD1: "+dvd1.search("King Liom"));
 		System.out.println("Result for search word \"King\" in DVD1: "+dvd1.search("King"));

@@ -1,6 +1,7 @@
 package hust.soict.globalict.aims.order;
 import hust.soict.globalict.aims.disc.DigitalVideoDisc;
-import java.lang.Math;
+import java.util.Random;
+
 import hust.soict.globalict.aims.utils.DVDUtils;
 import hust.soict.globalict.test.disc.TestPassingParameter;
 public class Order {
@@ -88,10 +89,11 @@ public class Order {
 		int luckyNum=-1;
 		System.out.println("**************CART*************");
 		for(int i=0;i<qtyOrdered;i++) {
-			if(luckyDigitalVideoDisc!=itemsOrdered[i]) System.out.println(i+1+"."+itemsOrdered[i].getDetail());
-			else {
+			if(luckyDigitalVideoDisc==itemsOrdered[i]) {
 				System.out.println(i+1+"."+itemsOrdered[i].getDetail()+"(FREE)");
 				luckyNum=i;
+			}else {
+				System.out.println(i+1+"."+itemsOrdered[i].getDetail());
 			}
 		}
 		System.out.println("Total cost: "+totalCost(luckyNum)+"$");
@@ -135,7 +137,8 @@ public class Order {
 		getDetail();
 	}
 	public DigitalVideoDisc getALuckyItem() {
-		int luckyNumber= (int)Math.random()%qtyOrdered;
+		Random generator=new Random();
+		int luckyNumber= generator.nextInt(qtyOrdered);
 		return itemsOrdered[luckyNumber];
 	}
 }
